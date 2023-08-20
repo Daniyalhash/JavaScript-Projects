@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body{
+        background-color: #000000;
+    }
+    .co{
+        
+width: 70vw;
+height: 500px;
+background-color: transparent;
+margin:5% auto;
+display: flex;
+    }
+    .img{
+        background-color: #fff;
+        width: 35vw;
+     /* Hide any overflow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  background-color: transparent;
+     
+    }
+    .inner-div{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+       
+    }
+    .btn {
+        text-align: center;
+    display: flex;
+    margin: 0 5px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border: none;
+    background-color: lightgray;
+    padding: 10px 20px;
+  
+    height: none;
+    background-color: transparent;
+  }
+
+  .btn span {
+    cursor: pointer;
+    border: 1px solid #282c35;
+    border-radius: 3px;
+    width: 30px;
+    padding: 10px 30px;
+    background-color: #ffa7c4;
+    margin: 0 5px;
+    text-transform: capitalize;
+    font-weight: bolder;
+    font-size: larger;
+    letter-spacing: 2px;
+    transition: all 0.5s linear;
+  }
+ 
+  .btn span:hover{
+    background-color: #282c35;
+    color: #ffa7c4;
+    font-weight:lighter ;
+    letter-spacing: 1px;
+    box-shadow: 4px 4px 10px black;
+
+  }
+.image
+{
+    
+    width: 30vw;
+    transform: rotate(180deg);
+    object-fit: cover;
+    
+}
+ .active{
+    filter: drop-shadow(0px -60px 90px white);
+transition: all 0.1666s linear;
+}
+
+</style>
+</head>
+<body>
+    <div class="co">
+        <div class="img">
+            <img src="../img/bulb-off.png" class="image" alt="">
+        </div>
+        <div class="inner-div">
+            <button class="btn"><span class="on">On</span><span class="off">Off</span></button>
+        </div>
+    </div>
+    <script>
+        // take all classes
+        const co = document.querySelector('.co');
+        const btn = document.querySelector('.btn');
+        const btnOn = document.querySelector('.on');
+        const btnOff = document.querySelector('.off');
+        const imgContainer = document.querySelector('.img');
+        const image = document.querySelector('.image');
+    
+        btnOn.addEventListener('click', function () {
+            
+            imgContainer.innerHTML = `<img src="../img/bulb-on.png" class="image" alt="">`;
+            imgContainer.classList.add('active');
+        });
+    
+        btnOff.addEventListener('click', function () {
+            imgContainer.innerHTML = `<img src="../img/bulb-off.png" class="image" alt="">`;
+            imgContainer.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

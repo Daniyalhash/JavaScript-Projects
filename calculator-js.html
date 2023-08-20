@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head><Style>
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+.main{
+  margin: 5% auto;
+}
+.calculatons{
+  width: 300px;
+  display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr; /* Three equal-width columns */
+      grid-gap:0;
+    background-color: rgb(0, 0, 0);
+
+cursor: pointer;
+height: 500px;
+border-radius: 0 0 10% 10%;
+margin: auto;
+}
+
+.buttons{
+  margin: auto;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+background-color: #464644;
+      padding: 2px;
+      text-align: center;
+      border: none;
+      color: white;
+font-size: 20px;
+font-weight: bold;
+      cursor: pointer;
+}
+.op{
+  margin: auto;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+background-color: #ff8000;
+      padding: 2px;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+color: white;
+font-size: 20px;
+font-weight: bold;
+}
+.js-cal{
+  margin: 0% auto;
+  text-align: center;
+  height: 30px;
+  background-color: black;
+  width: 300px;
+color: white;
+border-radius: 10px 10px 0 0;
+font-size: large;
+font-weight: bold;
+
+}
+    </Style></head>
+    <body>
+        <div class="main">
+            <p class="js-cal"></p>
+              <div class="calculatons">
+              
+              <button onclick="updateCalculation(1)" class="buttons ">1</button>
+              <button onclick="updateCalculation(2)" class="buttons">2</button>
+              <button onclick="updateCalculation(3)"class="buttons">3</button>
+              <button onclick="updateCalculation(' + ')"class="op">+</button>
+              <button onclick="updateCalculation(4)" class="buttons ">4</button>
+              <button onclick="updateCalculation(5)" class="buttons">5</button>
+              <button onclick="updateCalculation(6)"class="buttons">6</button>
+              <button onclick="updateCalculation(' - ')"class="op">-</button>
+              <button onclick="updateCalculation(7)" class="buttons ">7</button>
+              <button onclick="updateCalculation(8)" class="buttons">8</button>
+              <button onclick="updateCalculation(9)"class="buttons">9</button>
+              <button onclick="updateCalculation(' * ')"class="op">*</button>
+              <button onclick="updateCalculation(0)" class="buttons ">0</button>
+              <button onclick="updateCalculation(' . ')" class="buttons">.</button>
+              <button onclick="
+              calculation = eval(calculation);
+            
+              // Display the calculation on the page
+              // instead of console.log
+              displayCalculation();
+            
+              localStorage.setItem('calculation', calculation);" class="buttons">=</button>
+            <button onclick="addTO(' / ')" class="op">/</button>
+              <button onclick="
+              calculation = '';
+            
+              // Display the calculation on the page
+              // instead of console.log
+              displayCalculation();
+            
+              localStorage.setItem('calculation', calculation);" class = "buttons">Clear</button>
+            </div></div>
+    <script >
+        let calculation = localStorage.getItem('calculation') || '';
+
+// Display the calculation when the page first loads.
+displayCalculation();
+
+function updateCalculation(value) {
+  calculation += value;
+
+  // Display the calculation on the page
+  // instead of console.log
+  displayCalculation();
+
+  localStorage.setItem('calculation', calculation);
+}
+
+function displayCalculation() {
+  document.querySelector('.js-cal')
+    .innerHTML = calculation;
+}
+    </script>
+    </body>
+</html>
