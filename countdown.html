@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-family: 'Poppin',sans-serif;
+                box-sizing: border-box;
+            }
+            :root{
+                color: hsl(205, 72%, 37%);
+                --clr-grey-1: hsl(209, 61%, 16%);
+                --clr-grey-5: hsl(210, 22%, 49%);
+                --clr-grey-8: hsl(210, 31%, 80%);
+                --clr-grey-1: hsl(209, 61%, 16%);
+            }
+            body{
+                background-color: hsl(210, 31%, 80%);
+            }
+            .container{
+                padding: 30px;
+            }
+            .sub-container{
+                display: flex;
+                margin: 10% auto;
+
+            }
+            .img{
+                width: 100%;
+                height: 300px;
+            }
+            .sec{
+                margin-left: 50px;
+                
+            }
+            h4{
+                color: hsl(205, 72%, 37%);
+                font-size: 25px;
+                letter-spacing: 3px;
+                position: relative;
+                margin-top: -20px;
+            }
+            h3{
+                color: hsl(209, 61%, 16%);
+                font-size: 15px;
+                letter-spacing: 3px;  
+                margin-bottom: 0.75rem;
+            }
+            p{
+                color: hsl(210, 22%, 49%);
+                font-size: 15px;
+                letter-spacing: 1px; 
+                margin: 2rem 0;
+            }
+            .countDown{
+                margin-bottom: 10px;
+                display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-template-rows: auto;
+    gap: 20px; 
+                display: flex;
+            }
+            .num{
+                color: white;
+                background-color: hsl(209, 61%, 16%); 
+                padding: 10px;
+                margin-right: 1rem;
+            }
+            .num-num{
+                text-align: center;
+                font-size: 30px;
+            }
+            .num-days{
+                text-align: center;
+                font-weight: lighter;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="container">
+            <div class="sub-container">
+                <img src="../img/gift.jpeg" alt="" class="img">
+                <div class="sec">
+                    <article class="article">
+                        <h4>OLD IPHONE GIVEAWAY</h4>
+                        <h3>Giveaway Ends On Saturday, 26 August 2023 11:30am</h3>
+                        
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit molestiae cum libero atque ut voluptate qui consectetur aliquid incidunt voluptatem quos, dolore, non commodi quaerat aliquam eligendi, quisquam totam blanditiis.</p>
+                        <div class="countDown">
+                            <div class="num"><h2 class="num-num day" onclick="countdown()"></h2></h2><h2 class="num-days">Days</h2></div>
+                            <div class="num"><h2 class="num-num hour"onclick="countdown()"></h2></h2><h2 class="num-days">Hours</h2></div>
+                            <div class="num"><h2 class="num-num mins"onclick="countdown()"></h2></h2><h2 class="num-days">Mins</h2></div>
+                            <div class="num"><h2 class="num-num secs"onclick="countdown()"></h2></h2><h2 class="num-days">Secs</h2></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </header>
+     
+        <p class="js-timer" onclick="countdown()"></p>
+    <script>
+
+function countdown() {
+  const targetDate = new Date('2023-08-26 11:30:00').getTime();
+
+  const interval = setInterval(function () {
+    const currentDate = new Date().getTime();
+    const remainingTime = targetDate - currentDate;
+
+    if (remainingTime <= 0) {
+      clearInterval(interval);
+      document.querySelector('.countDown').innerHTML = 'Timer Expired!';
+    } else {
+      const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+      
+      const options = { weekday: 'long' };
+      const targetDay = new Date('2023-08-26 11:30:59').toLocaleDateString(undefined, options);
+
+      document.querySelector('.day').innerHTML = `${days}`;
+      document.querySelector('.hour').innerHTML = `${hours}`;
+      document.querySelector('.mins').innerHTML = `${minutes}`;
+      document.querySelector('.secs').innerHTML = `${seconds}`;
+      document.querySelector('.targetDay').innerHTML = `${targetDay}`;
+    }
+  }, 1000);
+}
+
+countdown();
+
+    </script>
+    </body>
+</html>
