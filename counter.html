@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head><Style>
+*{
+    font-family: monospace;
+    padding: 0%;
+    margin: 0%;
+    background-color: rgb(176, 189, 207);
+}
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  /* Existing styles for .container */
+}
+
+.box {
+  width: 300px;
+  height: 100px;
+  
+
+  /* Other box styles */
+}
+h1{
+    font-size: 70px;
+    font-weight: 700;
+    text-align: center;
+}
+.button{
+align-items: center;
+text-align: center;
+justify-content: center;
+
+transform: translateX(5px);
+
+margin: 10%;
+
+}
+button{
+    margin: 6px;
+    padding: 5px;
+    border-radius: 10%;
+    border: 1px solid rgb(18, 36, 57);
+    background-color: rgb(176, 189, 207);
+    cursor: pointer;
+    font-weight: 600;
+    color: whitesmoke;
+    transition: background-color 0.3s ease-in;
+    font-variant: small-caps;
+    font-stretch: expanded;
+
+}
+button:hover{
+    background-color:rgb(18, 36, 57) ;
+    color: white;
+}
+p{
+    text-align: center;
+    color: tomato;
+}
+</Style></head>
+    <body>
+        <div class="outer-container">
+            <div class="container">
+              <div class="box">
+                <h1>Counter</h1>
+                <h1 class="js-display"></h1>
+                <div class="button">
+                    <button onclick="decCounter()" class="js-dec">Decrease</button><button onclick="reset()"class="js-reset">Reset</button><button onclick="Counter()"class="js-inc">Increase</button>
+
+                </div>
+                <p class="js-error"></p>
+              </div>
+            </div>
+          </div>
+    <script >
+var counter = 0;
+displayCounter();
+function Counter(){
+  counter+=1;
+  document.querySelector('.js-error').innerHTML = '';
+  displayCounter();
+}
+function displayCounter(){
+    document.querySelector('.js-display').innerHTML = counter;
+
+}
+// reset
+function reset(){
+    counter = 0;
+    displayCounter()
+}
+// decrease
+function decCounter(){
+    if (counter<=0){
+document.querySelector('.js-error').innerHTML=':/counter didnt have much value';
+    }else{
+        counter-=1;
+       
+  displayCounter();
+    }
+
+}
+    </script>
+    </body>
+</html>
