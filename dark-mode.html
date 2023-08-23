@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+    --clr-bcg: #fff;
+    --clr-font: #282c35;
+    --clr-primary: #d23669;
+    --clr-grey: #64748b;
+}
+.dark-theme {
+    --clr-bcg: #282c35;
+    --clr-font: #fff;
+    --clr-primary: #ffa7c4;
+    --clr-grey: #cbd5e1;
+}
+
+.active-btn{
+background-color: #ffa7c4;
+}
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: 'Poppin',sans-serif;
+            
+        }
+.body{
+    transition: all 0.3s linear;
+}
+        .body{
+         
+            width: 100%;
+           
+            
+        }
+        .container{
+            width: 90vw;
+    max-width: 600px;
+            background-color: #fff;
+            margin:  auto;
+        }
+        .header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header .h1{
+            font-size: 40px;
+            font-weight: lighter;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            
+        }
+        .btn-toggle{
+            background: var(--clr-primary);
+            height: 30px;
+    color: var(--clr-bcg);
+    padding: 0.20rem 0.5rem;
+    border-radius: 5px;
+    border-color: transparent;
+    text-transform: capitalize;
+    transition: all 0.3s linear;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+        }
+        .active-btn{
+            background-color: #ffa7c4;
+            color: #282c35;
+        }
+        .body-main{
+            margin-top: 10%;
+            line-height: 1.5rem;
+        }
+        .container{
+            background-color: transparent;
+        }
+        .post{
+            margin-bottom: 3rem;
+            line-height: 1.5rem;
+        }
+        .post h2{
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: bold;
+            color: #d23669;
+            letter-spacing: 2px;
+        }
+        .post-info{
+            display: flex;
+            margin-top: 12px;
+
+        }
+        .post-info span{
+            font-size: 15px;
+            color: #64748b;
+            font-style: oblique;
+
+        }.post-info p{
+            font-weight: 15px;
+            letter-spacing: 2px;
+            font-weight: lighter;
+            margin-top: 26px;
+        }
+.active-body{
+    background-color: #282c35;
+    color: #fff;
+}
+.active-span{
+    color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="container">
+            <div class="header">
+                <h1 class="h1">Overreacted</h1>
+                <button class="btn-toggle ">toggle</button>
+            </div>
+            <div class="body-main">
+               <article class="post">
+                    <h2>the WET Codbase</h2>
+                    <div class="post-info">
+                      <span>October 4th, 2020</span>
+                      <span>11 min read</span>
+                    </div>
+                    <p>
+                      I'm baby ramps kombucha gluten-free ennui swag tattooed street art. Marfa biodiesel letterpress blue bottle subway tile, pop-up pok pok of.
+                    </p>
+                  </article><article class="post">
+                    <h2>goodby, clean code</h2>
+                    <div class="post-info">
+                      <span>November 22nd, 2019</span>
+                      <span>5 min read</span>
+                    </div>
+                    <p>
+                      Biodiesel artisan seitan plaid sriracha copper mug venmo shabby chic. Kickstarter raclette kombucha, yr post-ironic jianbing try-hard flexitarian vaporware normcore.
+                    </p>
+                  </article><article class="post">
+                    <h2>my decade in review</h2>
+                    <div class="post-info">
+                      <span>August 11th, 2018</span>
+                      <span>5 min read</span>
+                    </div>
+                    <p>
+                      Direct trade shabby chic four dollar toast, tilde actually try-hard bicycle rights aesthetic forage. Meditation keytar asymmetrical tacos artisan truffaut. Pabst jean shorts roof party scenester.
+                    </p>
+                  </article><article class="post">
+                    <h2>what are the react team principles</h2>
+                    <div class="post-info">
+                      <span>June 4th, 2015</span>
+                      <span>5 min read</span>
+                    </div>
+                    <p>
+                      Selvage street art hammock affogato VHS. Mustache shaman literally wayfarers schlitz. Direct trade four loko narwhal VHS pop-up, chartreuse trust fund typewriter street art swag thundercats art party.
+                    </p>
+                  </article>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // call all classes
+        const btn = document.querySelector('.btn-toggle ')
+        const body = document.querySelector('.body ')
+const id = document.querySelector('.h1')
+        btn.addEventListener('click', function() {
+    if (btn.classList.contains('active-btn')) {
+        btn.classList.remove('active-btn');
+        body.classList.remove('active-body');
+        id.classList.remove('active-span');
+
+    } else {
+        btn.classList.add('active-btn');
+        body.classList.add('active-body');
+        id.classList.add('active-span');
+    }
+});
+    </script>
+</body>
+</html>
