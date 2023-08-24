@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        :root {
+    --clr-primary-1: hsl(205, 86%, 17%);
+    --clr-primary-2: hsl(205, 77%, 27%);
+    --clr-primary-3: hsl(205, 72%, 37%);
+    --clr-primary-4: hsl(205, 63%, 48%);
+    --clr-primary-5: #49a6e9;
+    --clr-primary-6: hsl(205, 89%, 70%);
+    --clr-primary-7: hsl(205, 90%, 76%);
+    --clr-primary-8: hsl(205, 86%, 81%);
+    --clr-primary-9: hsl(205, 90%, 88%);
+    --clr-primary-10: hsl(205, 100%, 96%);
+    --clr-grey-1: hsl(209, 61%, 16%);
+    --clr-grey-2: hsl(211, 39%, 23%);
+    --clr-grey-3: hsl(209, 34%, 30%);
+    --clr-grey-4: hsl(209, 28%, 39%);
+    --clr-grey-5: hsl(210, 22%, 49%);
+    --clr-grey-6: hsl(209, 23%, 60%);
+    --clr-grey-7: hsl(211, 27%, 70%);
+    --clr-grey-8: hsl(210, 31%, 80%);
+    --clr-grey-9: hsl(212, 33%, 89%);
+    --clr-grey-10: hsl(210, 36%, 96%);
+    --clr-white: #fff;
+    --clr-red-dark: hsl(360, 67%, 44%);
+    --clr-red-light: hsl(360, 71%, 66%);
+    --clr-green-dark: hsl(125, 67%, 44%);
+    --clr-green-light: hsl(125, 71%, 66%);
+    --clr-black: #222;
+    --ff-primary: "Roboto", sans-serif;
+    --ff-secondary: "Open Sans", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+body{
+    background-color: hsl(210, 36%, 96%);
+    font-family: 'Poppin',sans-serif;
+}
+.grocery-main {
+    background: var(--clr-white);
+    border-radius: var(--radius);
+    box-shadow: var(--light-shadow);
+    transition: var(--transition);
+    padding: 2rem;
+}
+.grocery-main {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 35rem;
+    margin-top: 8rem;
+}
+ 
+        form{
+            margin: 0 auto;
+            text-align: center;
+        }
+        .alert {
+        
+    margin-bottom: 1rem;
+    height: 1.25rem;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 0.7rem;
+    border-radius: 0.25rem;
+    letter-spacing:2px;
+    text-transform: capitalize;
+            
+}
+.alert.active-red{
+    background-color: hsl(0, 59%, 74%);
+    color: var(--clr-red-dark);
+}
+.alert.active-green{
+    background-color: hsl(125, 51%, 72%);
+    color: var(--clr-green-dark);
+}
+       h3{
+        position: relative;
+        text-align: center;
+        font-size: 25px;
+        text-transform: capitalize;
+        letter-spacing: 4px;
+        color:  hsl(209, 61%, 16%);
+        
+       }
+       .form-control{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+       }
+       /* main body */
+       #grocery {
+        width: 85%;
+        background-color:hsl(210, 36%, 96%) ;
+        height: 20px;
+        border: none;
+        padding: 4px 17px;
+        font-size: 15px;
+        color: hsl(210, 22%, 49%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
+       }
+       .submit-btn{
+        width: 15%;
+        border: none;
+        background-color:hsl(205, 86%, 81%) ;
+        padding: 4px 4px 4px;
+        font-size: 15px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+        text-transform: capitalize;
+        transition: all 0.3s linear;
+        
+       }
+       .submit-btn:hover{
+        background-color: #49a6e9;
+        color: #fff;
+        transition: background-color 0.4 ease;   
+    }
+    /* second part */
+    .grocery-container{
+        text-align: center;
+        margin-bottom: 1rem;
+ 
+    }
+   
+    .grocery-item{
+        
+        width:95% ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        margin-bottom: 1rem;
+    margin-top: 1rem;
+    height: 20px;
+    padding: 4px 17px;
+    border-radius: 5px;
+   text-transform: capitalize;
+   letter-spacing: 2px;
+   transition: all 0.3s linear;
+   
+
+    }
+    .grocery-item:hover{
+        background-color:hsl(210, 36%, 96%)  ;
+        color:hsl(210, 22%, 49%) ;
+    }
+    .clear-btn{
+      background-color: transparent;  
+      color: hsl(360, 71%, 66%);
+      border: none;
+      cursor: pointer;
+      text-transform: capitalize;
+      letter-spacing: 3px;
+      font-size: 15px;
+    }
+    .clear-btn:hover{
+        color: var(--clr-red-dark);
+    }
+    .edit-btn{
+        color: var(--clr-green-light);
+        border: none;
+        cursor: pointer;
+    }
+    .edit-btn:hover{
+        color: var(--clr-green-dark);
+    }
+    .delete-btn{
+        color: var(--clr-red-light);
+        border: none;
+        cursor: pointer;
+
+    }
+    .delete-btn:hover{
+        color: var(--clr-red-dark);
+    }
+    .edit-btn .delete-btn{
+        background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    font-size: 0.7rem;
+    margin: 0 0.15rem;
+    transition: var(--transition);
+    }
+    </style>
+</head>
+<body>
+    <div class="grocery-main">
+        <form class="grocery-form">
+            <p class="alert "></p>
+            <h3>grocery bud</h3>
+            <div class="form-control">
+              <input type="text" class="grocery" id="grocery" placeholder="e.g. eggs">
+              <button type="submit" class="submit-btn">submit</button>
+            </div>
+          </form>
+          <div class="grocery-container">
+            <div class="grocery-list">
+            </div>
+            <button class="clear-btn" style="display: none;">clear items</button>
+          </div>
+    </div>
+    <script>
+        // first take id 
+        const input = document.querySelector('.grocery')
+        const submit = document.querySelector('.submit-btn')
+       const clear = document.querySelector('.clear-btn')
+       let todoListItems; // 
+submit.addEventListener('click',function(event){
+    event.preventDefault(); 
+    addTodo();
+    input.value = '';
+    const alertMessage = document.querySelector('.alert');
+    alertMessage.innerHTML = 'Product added successfully';
+    alertMessage.classList.add('active-green');
+
+    // Set a timeout to remove the alert message after 3 seconds
+    setTimeout(function() {
+        alertMessage.innerHTML = ''; // Clear the message
+        alertMessage.classList.remove('active-green');
+    }, 2000); // 3000 milliseconds = 3 seconds
+});
+
+let lists = [];
+// add to cart
+function addTodo(){
+   var valueItem =input.value;
+   lists.push(valueItem) 
+   if(lists.length !== 0){
+        clear.removeAttribute('style');
+    }else{
+        clear.style.display ='none';
+    }
+   renderTodoList();
+}
+// show list
+function renderTodoList() {
+  let todoListHTML = '';
+  lists.forEach(function (todoObject, index) {
+    const { name } = todoObject;
+    const html = `
+      <article class="grocery-item">
+        <p class="title">${todoObject}</p>
+        <div class="btn-container">
+          <button type="button" class="edit-btn">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button type="button" onclick="deleteItem(${index})" class="delete-btn">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </article>
+    `;
+    todoListHTML += html;
+  });
+
+  document.querySelector('.grocery-list').innerHTML = todoListHTML;
+  const editButtons = document.querySelectorAll('.edit-btn');
+  editButtons.forEach((editBtn, index) => {
+    editBtn.addEventListener('click', () => {
+      editItem(index);
+    });
+  });
+}
+// delete an item
+function deleteItem(index) {
+  lists.splice(index, 1);
+
+  const alertMessage = document.querySelector('.alert');
+    alertMessage.innerHTML = 'Product Deleted successfully';
+    alertMessage.classList.add('active-red');
+
+    // Set a timeout to remove the alert message after 3 seconds
+    setTimeout(function() {
+        alertMessage.innerHTML = ''; // Clear the message
+        alertMessage.classList.remove('active-red');
+    }, 2000); // 3000 milliseconds = 3 seconds
+  const groceryList = document.querySelector('.grocery-list');
+  const todoListItems = document.querySelectorAll('.grocery-item'); // Assuming each todo item has the class "grocery-item"
+  
+  if (index >= 0 && index < todoListItems.length) {
+    const todoListHTML = todoListItems[index];
+    groceryList.removeChild(todoListHTML);
+  }
+}
+// clear all item
+clear.addEventListener('click',function(){
+    const groceryList = document.querySelector('.grocery-list');
+    let todoListItems = document.querySelectorAll('.grocery-item');
+    if(lists.length !== 0){
+            clear.removeAttribute('style');
+        for (let i = todoListItems.length - 1; i >= 0; i--) {
+            
+             const todoListHTML = todoListItems[i];
+        groceryList.removeChild(todoListHTML);
+
+        clear.style.display ='none';
+        lists = []
+        const alertMessage = document.querySelector('.alert');
+    alertMessage.innerHTML = 'All Product Deleted successfully';
+    alertMessage.classList.add('active-red');
+
+    // Set a timeout to remove the alert message after 3 seconds
+    setTimeout(function() {
+        alertMessage.innerHTML = ''; // Clear the message
+        alertMessage.classList.remove('active-red');
+    }, 2000); // 3000 milliseconds = 3 seconds
+        const groceryList = document.querySelector('.grocery-list');
+        const todoListItems = document.querySelectorAll('.grocery-item'); // Assuming each todo item has the class "grocery-item"
+                // document.querySelector('.')
+                }
+        
+            }else{
+                clear.style.display ='none';
+            }
+})
+
+    //  edit item
+    function editItem(index) {
+  const todoListItems = document.querySelectorAll('.grocery-item'); // Assuming each todo item has the class "grocery-item"
+  
+  if (index >= 0 && index < todoListItems.length) {
+    const todoListHTML = todoListItems[index];
+    const title = todoListHTML.querySelector('.title');
+    const editInput = document.createElement('input');
+    editInput.value = title.textContent;
+    title.replaceWith(editInput);
+
+    const editBtn = todoListHTML.querySelector('.edit-btn');
+    editBtn.innerHTML = '<i class="fas fa-save"></i>';
+    editBtn.onclick = saveItem.bind(null, index);
+  }
+}
+
+function saveItem(index) {
+  const todoListItems = document.querySelectorAll('.grocery-item'); // Assuming each todo item has the class "grocery-item"
+  
+  if (index >= 0 && index < todoListItems.length) {
+    const editInput = todoListItems[index].querySelector('input');
+    const title = document.createElement('p');
+    title.textContent = editInput.value;
+    editInput.replaceWith(title);
+
+    const editBtn = todoListItems[index].querySelector('.edit-btn');
+    editBtn.innerHTML = '<i class="fas fa-edit"></i>';
+    editBtn.onclick = editItem.bind(null, index);
+  }
+}
+    </script>
+</body>
+</html>
