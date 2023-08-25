@@ -1,0 +1,322 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <style>
+            *{
+                padding: 0%;
+                margin: 0%;
+                font-family: 'Poppin', sans-serif;
+                box-sizing: border-box;
+                background-color: hsl(212, 33%, 89%);
+            }
+            .conatiner{
+                width: 650px;
+                height: 650px;
+                z-index: 1000;
+                background-color: hsl(212, 33%, 89%);
+                margin: 80px auto;
+             
+            }
+            .menu{
+                width: 350px;
+                height: 350px;
+                top: 0%; /* Center vertically */
+                left: 0%; /* Center horizontally */
+                justify-content: center;
+                align-items: center;
+                transform: scale(2);
+                transform-origin: top left; /* Adjust for centering */
+                background-color: hsl(212, 33%, 89%);
+                
+            }
+            .title{
+                color: hsl(205, 86%, 17%);
+                text-align: center;
+                text-transform:capitalize;
+                font-family: 'Poppin', sans-serif;
+                letter-spacing: 3px;
+                font-size: 15px;
+            }
+           .underline{
+            background-color: #c59d5f;
+            height: 2px;
+            width: 15%;
+            align-items: center;
+            margin: 0 auto;
+           }
+           .btn-container{
+            align-items: center;
+            margin-top: 1rem;
+            text-align: center;
+            justify-content: center;
+           }
+           .filter-btn{
+            border: 1px solid #c59d5f;
+            background-color: hsl(212, 33%, 89%);
+            color: #c59d5f;
+            margin: 2px;
+            border-radius:3px ;
+            padding: 3px 7px 3px 7px;
+            text-transform: capitalize;
+            font-size: 9px;
+            letter-spacing: 1px;
+            cursor: pointer;
+           }.filter-btn:hover{
+            
+            background-color: #c59d5f;
+            color:white;
+            transform: background-color 0.4 ease;
+           }
+           .section-center{
+           
+            display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Three equal-width columns */
+    gap: 10px; 
+    
+           }
+           /* styling a item, */
+           .menu-item{
+            margin-top: 1rem;
+                background-color: transparent;
+                display: flex;
+           }
+           header{
+            display: flex;
+            justify-content: space-between;
+          
+            padding: 0 7px;
+           }
+            .photo{
+                margin: 1px;
+                width: 100px;
+                height: 90px;
+border: 3px solid #c59d5f;
+border-radius: 4px;
+                     }   
+         h4{
+            font-size: 0.7rem;
+            text-transform:capitalize;
+            color: hsl(209, 61%, 16%);
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 0.5px;
+            line-height: 2;
+            border-bottom: 0.5px dotted;
+            
+         }
+         .price{
+            color: #c59d5f;
+            border: none;
+         }
+         p{
+            font-size: 0.5rem;
+            text-transform:capitalize;
+            color:hsl(211, 27%, 70%);
+            letter-spacing: 1px;
+            font-weight: lighter;
+            padding: 10px 7px ;
+         }
+
+/* Instead of using .plus-icon and .minus-icon for both articles, make them more specific */
+/*  */
+        </style>
+    </head>
+    <body>
+        <div class="conatiner">
+            <div class="menu">
+                <div class="title">
+                    <h2>our menu</h2>
+                    <div class="underline"></div>
+                  </div>
+                <div class="btn-container">
+                    <button class="filter-btn" type="button" data-id="all">
+                    all
+                    </button><button class="filter-btn" type="button" data-id="breakfast">
+                    breakfast
+                    </button><button class="filter-btn" type="button" data-id="lunch">
+                    lunch
+                    </button><button class="filter-btn" type="button" data-id="shakes">
+                    shakes
+                    </button><button class="filter-btn" type="button" data-id="dinner">
+                    dinner
+                    </button>
+                </div>
+                <div class="section-center">
+                  <article class="menu-item breakfast">
+                    <img src="../img/item-1 (1).jpeg" class="photo" alt="buttermilk" pancakes="">
+                    <div class="item-info">
+                      <header>
+                        <h4>buttermilk pancakes</h4>
+                        <h4 class="price">$15.99</h4>
+                      </header>
+                      <p class="item-text">
+                        I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed 
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item lunch">
+                    <img src="../img/item-2.jpeg" class="photo" alt="diner" double="">
+                    <div class="item-info">
+                      <header>
+                        <h4>diner double</h4>
+                        <h4 class="price">$13.99</h4>
+                      </header>
+                      <p class="item-text">
+                        vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats 
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item shakes">
+                    <img src="../img/item-3.jpeg" class="photo" style="width: 100px;" alt="godzilla" milkshake="">
+                    <div class="item-info">
+                      <header>
+                        <h4>godzilla milkshake</h4>
+                        <h4 class="price">$6.99</h4>
+                      </header>
+                      <p class="item-text">
+                        ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item breakfast">
+                    <img src="../img/item-4.jpeg" class="photo" alt="country" delight="">
+                    <div class="item-info">
+                      <header>
+                        <h4>country delight</h4>
+                        <h4 class="price">$20.99</h4>
+                      </header>
+                      <p class="item-text">
+                        Shabby chic keffiyeh neutra snackwave pork belly shoreditch. Prism austin mlkshk truffaut, 
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item lunch">
+                    <img src="../img/item-5.jpeg" class="photo" alt="egg" attack="">
+                    <div class="item-info">
+                      <header>
+                        <h4>egg attack</h4>
+                        <h4 class="price">$22.99</h4>
+                      </header>
+                      <p class="item-text">
+                        franzen vegan pabst bicycle rights kickstarter pinterest meditation farm-to-table 90's pop-up 
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item shakes">
+                    <img src="../img/item-6.jpeg" class="photo" alt="oreo" dream="">
+                    <div class="item-info">
+                      <header>
+                        <h4>oreo dream</h4>
+                        <h4 class="price">$18.99</h4>
+                      </header>
+                      <p class="item-text">
+                        Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday
+                      </p>
+                    </div>
+                  </article><article class="menu-item breakfast" >
+                    <img src="../img/item-7.jpeg" class="photo" alt="bacon" overflow="">
+                    <div class="item-info">
+                      <header>
+                        <h4>bacon overflow</h4>
+                        <h4 class="price">$8.99</h4>
+                      </header>
+                      <p class="item-text">
+                        carry jianbing normcore freegan. Viral single-origin coffee live-edge, pork belly cloud bread iceland put a bird 
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item lunch">
+                    <img src="../img/item-8.jpeg" class="photo" alt="american" classic="">
+                    <div class="item-info">
+                      <header>
+                        <h4>american classic</h4>
+                        <h4 class="price">$12.99</h4>
+                      </header>
+                      <p class="item-text">
+                        on it tumblr kickstarter thundercats migas everyday carry squid palo santo leggings. Food truck truffaut  
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item shakes">
+                    <img src="../img/item-9.jpeg" class="photo" alt="quarantine" buddy="">
+                    <div class="item-info">
+                      <header>
+                        <h4>quarantine buddy</h4>
+                        <h4 class="price">$16.99</h4>
+                      </header>
+                      <p class="item-text">
+                        skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.
+                      </p>
+                    </div>
+                  </article>
+                  <article class="menu-item dinner">
+                    <img src="../img/item-10.jpeg" class="photo" alt="steak" dinner="">
+                    <div class="item-info">
+                      <header>
+                        <h4>steak dinner</h4>
+                        <h4 class="price">$39.99</h4>
+                      </header>
+                      <p class="item-text">
+                        skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.
+                      </p>
+                    </div>
+                  </article></div>
+              
+            </div>
+        </div>
+    </body>
+    <script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.menu-item');
+  
+  // Load the selected category from local storage (if available)
+  const selectedCategory = localStorage.getItem('selectedCategory');
+  if (selectedCategory) {
+    applyFilter(selectedCategory);
+    // Highlight the previously selected button
+    const selectedButton = document.querySelector(`[data-id="${selectedCategory}"]`);
+    if (selectedButton) {
+      selectedButton.classList.add('active');
+    }
+  }
+  
+  // Add click event listeners to buttons
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const categoryId = this.getAttribute('data-id');
+      applyFilter(categoryId);
+      
+      // Store the selected category in local storage
+      localStorage.setItem('selectedCategory', categoryId);
+      
+      // Highlight the clicked button and remove highlighting from others
+      buttons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+// Function to apply the filter based on category
+function applyFilter(categoryId) {
+  items.forEach(item => {
+    if (categoryId === 'all') {
+      item.style.display = 'flex'; // Show all items for "All" button
+    } else if (categoryId === 'breakfast' && item.classList.contains('breakfast')) {
+      item.style.display = 'flex'; // Show breakfast items for "Breakfast" button
+    } else if (categoryId === 'lunch' && item.classList.contains('lunch')) {
+      item.style.display = 'flex'; // Show lunch items for "Lunch" button
+    } else if (categoryId === 'dinner' && item.classList.contains('dinner')) {
+      item.style.display = 'flex'; // Show dinner items for "Dinner" button
+    } else if (categoryId === 'shakes' && item.classList.contains('shakes')) {
+      item.style.display = 'flex'; // Show shakes items for "Shakes" button
+    } else {
+      item.style.display = 'none'; // Hide items that don't match the selected category
+    }
+  });
+}
+});
+</script>
+</html>
