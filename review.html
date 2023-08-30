@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(209, 219, 231);
+}
+.container{
+    background-color:lightblue ;
+    width: 620px;
+height: 440px;
+    margin: 80px auto;
+    background-color: rgb(251, 251, 251);
+    border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}.box{
+width: 310px;
+height: 209px;
+
+justify-content: center;
+align-items: center;
+transform: scale(2);
+transform-origin: top left;
+background-color: transparent;
+
+}
+.img{
+    border-radius: 50%;
+    border-width: 0 10px 10 10; 
+    border-style: none solid none none;
+  border-color: transparent #007bff transparent transparent;
+    width: 70px;
+    height: 70px;
+    display: block;
+  margin: 10px auto;
+   /* Set the width to 100% to adjust to the container's width */
+; /* Maintain the image's aspect ratio */
+
+  /* Align the top of the image with the top of its container */
+  object-fit: cover; /* or "contain" depending on the desired effect */
+  object-position: top; 
+}
+.img::after {
+  content: ",";
+  position: relative;
+  left: 5px; /* Adjust the position as needed */
+  color: red; /* Adjust the color as needed */
+  font-weight: bold;
+}
+h1{
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+background-color: transparent;
+letter-spacing: 2px;
+}
+h3{
+    font-size: 8px;
+  color: #007bff;
+    text-align: center;
+background-color: transparent;
+font-weight: lighter;
+}
+p{
+    font-size: 0.5rem;
+  padding: 10px;
+  color: #888888;
+    text-align: center;
+background-color: transparent;
+line-height: 8px;
+}
+.button-container{
+    background-color: transparent;
+  margin: 0 auto;
+  text-align: center;
+border: none;
+}
+.prev-btn,.next-btn{
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+}
+.button-container .prev-btn i,
+.button-container .next-btn i {
+    color: hsl(205, 89%, 70%);/* Change to the desired color */
+   background-color: transparent;
+
+}
+.button-container .prev-btn i:hover,
+.button-container .next-btn i:hover {
+    color: hsl(205, 72%, 37%);/* Change to the desired color */
+}
+
+.button-hover {
+  
+  padding: 3px 7px 3px  7px;
+  border: 1px solid hsl(205, 72%, 37%);
+  border-radius: 30px;
+  background-color: lightblue;
+  color: hsl(205, 72%, 37%);
+  cursor: pointer;
+  font-family: 'Poppin',sans-serif;
+  font-weight: 600;
+  font-size: 6px;
+
+position: absolute;
+margin-top: 0.5rem;
+transform: translateX(255%);
+}
+
+.button-hover:hover {
+  background-color: hsl(205, 72%, 37%);
+  color: white;
+  transition: background-color 0.3s
+}
+.title {
+  color: hsl(205, 72%, 37%);
+  font-size: 2rem;
+  position: relative;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-variant-caps: small-caps;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, width 0.5s ease, background-color 0.5s ease;
+  background-color: hsl(205, 72%, 37%);
+  position: absolute;
+  bottom: -1px; /* Adjust this value to control the distance between the text and the line */
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+  width: 100%;
+}
+</style>
+</head>
+    <body>
+        <section class="section"></section>
+
+<script>
+    const products = [{
+        image : '../img/2.jpg',
+    name :'Susan Smith',
+    small:'WEB DEVELOPER' ,
+    review : "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry"
+},{
+    image : "../img/3.jpg",
+    name :'Peter Jones',
+    small:'INTERN' ,
+    review : "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag."
+},{
+    image : "../img/1.jpg",
+    name :'Anna Johnson',
+    small:'WEB DESIGNER' ,
+    review : "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.."
+}
+
+];
+let currentReviewIndex = 0;
+
+function showReview(index) {
+    const reviewContainer = document.querySelector('.section');
+    
+    const product = products[index];
+    const productHTML = `
+        <div class="container">  
+            <h1 class="title">Our Reviews</h1>
+            <article class="box">
+                <img class="img" src="${product.image}" alt="${product.name}">
+                <h1>${product.name}</h1>
+                <h3>${product.small}</h3>
+                <p>${product.review}</p>
+                <div class="button-container">
+                    <button class="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <button class="button-hover">Surprise me</button>
+            </article>
+        </div>
+    `;
+    
+    reviewContainer.innerHTML = productHTML;
+    
+    const prevButton = document.querySelector('.prev-btn');
+    const nextButton = document.querySelector('.next-btn');
+    
+    prevButton.addEventListener('click', () => {
+        if (currentReviewIndex > 0) {
+            currentReviewIndex--;
+        } else {
+            currentReviewIndex = products.length - 1; // Wrap around to the last review
+        }
+        showReview(currentReviewIndex);
+    });
+    
+    nextButton.addEventListener('click', () => {
+        if (currentReviewIndex < products.length - 1) {
+            currentReviewIndex++;
+        } else {
+            currentReviewIndex = 0; // Wrap around to the first review
+        }
+        showReview(currentReviewIndex);
+    });
+}
+
+// Initial setup
+showReview(currentReviewIndex);
+    </script>
+    </body>
+</html>
