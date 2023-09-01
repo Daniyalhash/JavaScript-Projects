@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Poppins', sans-serif;
+   box-sizing: border-box;
+   
+}
+body{
+    background-color: hsl(210, 36%, 96%);; 
+}
+.section{
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.center-head {
+    text-align: center;
+    font-family: 'Poppin',sans-serif;
+    margin-bottom: 4rem ;
+
+}
+.center-head h1{
+    font-size: 2.5rem;
+    color: hsl(209, 61%, 16%);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: bold;
+    line-height: 2;
+}
+.center-head p{
+    color: hsl(210, 22%, 49%);
+    text-align: center;
+}
+.about-center{
+    display: flex;
+padding: 20px;
+
+
+}
+.section-center{
+    width: 90vh;
+    margin: 0 auto;
+}
+.about-img img{
+   border-radius: 10px;
+    height: 20rem;
+}
+.about{
+    background-color:#fff;
+    border-radius: 0.5rem;;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    margin-left: 20px;
+
+
+}
+.btn-container{
+    border-top-left-radius: 0.5rem ;
+    border-top-right-radius: 0.5rem;
+    display: grid;
+    
+    grid-template-columns:1fr 1fr 1fr;
+    
+}
+.tab-btn{
+    cursor: pointer;
+
+    background:hsl(212, 33%, 89%);;
+    border: none;
+    text-transform: capitalize;
+    font-size: 1rem;
+    padding: 1rem 0;
+    transition: all 0.3s linear;
+    letter-spacing: 0.25rem
+}
+.tab-btn:nth-child(1) {
+    border-top-left-radius: 0.5rem;
+}
+.tab-btn:nth-child(3) {
+    border-top-right-radius: 0.5rem;
+}
+.tab-btn.active{
+    background:#fff;
+
+}
+.tab-btn:hover{
+       background-color: hsl(205, 100%, 96%);; 
+ color:#49a6e9;
+}
+.about-content{
+    background-color:#fff;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 2rem 1.5rem;
+
+}
+.content{
+   
+    display: none;
+}
+.content.active {
+    display: block;
+}
+.content h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+   letter-spacing: 3px;
+   text-transform: capitalize;
+color: hsl(209, 61%, 16%);
+
+}
+.content p{
+   
+ line-height: 1.4;
+  font-size: 1rem;
+    color: hsl(210, 22%, 49%);
+}
+</style>
+</head>
+<body>
+<section class="section">
+  
+        <div class="center-head">
+            <h1>About</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, aperiam!</p>
+        </div>
+        <div class="about-center ">
+            <article class="about-img">
+              <img src="../java-1/img/hero-bcg.jpeg" alt="">
+            </article>
+            <article class="about">
+              <!-- btn container -->
+              <div class="btn-container">
+                <button class="tab-btn active " data-id="history">history</button>
+                <button class="tab-btn  " data-id="vision">vision</button>
+                <button class="tab-btn" data-id="goals">goals</button>
+              </div>
+              <div class="about-content">
+                <!-- single item -->
+                <div class="content active " id="history">
+                  <h4>history</h4>
+                  <p>
+                    I'm baby wolf pickled schlitz try-hard normcore marfa man bun
+                    mumblecore vice pop-up XOXO lomo kombucha glossier bicycle
+                    rights. Umami kinfolk salvia jean shorts offal venmo. Knausgaard
+                    tilde try-hard, woke fixie banjo man bun. Small batch tumeric
+                    mustache tbh wayfarers 8-bit shaman chartreuse tacos. Viral
+                    direct trade hoodie ugh chambray, craft beer pork belly flannel
+                    tacos single-origin coffee art party migas plaid pop-up.
+                  </p>
+                </div>
+                <!-- end of single item -->
+                <!-- single item -->
+                <div class="content " id="vision">
+                  <h4>vision</h4>
+                  <p>
+                    Man bun PBR&amp;B keytar copper mug prism, hell of helvetica. Synth
+                    crucifix offal deep v hella biodiesel. Church-key listicle
+                    polaroid put a bird on it chillwave palo santo enamel pin,
+                    tattooed meggings franzen la croix cray. Retro yr aesthetic four
+                    loko tbh helvetica air plant, neutra palo santo tofu mumblecore.
+                    Hoodie bushwick pour-over jean shorts chartreuse shabby chic.
+                    Roof party hammock master cleanse pop-up truffaut, bicycle
+                    rights skateboard affogato readymade sustainable deep v
+                    live-edge schlitz narwhal.
+                  </p>
+                  <ul>
+                    <li>list item</li>
+                    <li>list item</li>
+                    <li>list item</li>
+                  </ul>
+                </div>
+                <!-- end of single item -->
+                <!-- single item -->
+                <div class="content" id="goals">
+                  <h4>goals</h4>
+                  <p>
+                    Chambray authentic truffaut, kickstarter brunch taxidermy vape
+                    heirloom four dollar toast raclette shoreditch church-key.
+                    Poutine etsy tote bag, cred fingerstache leggings cornhole
+                    everyday carry blog gastropub. Brunch biodiesel sartorial mlkshk
+                    swag, mixtape hashtag marfa readymade direct trade man braid
+                    cold-pressed roof party. Small batch adaptogen coloring book
+                    heirloom. Letterpress food truck hammock literally hell of wolf
+                    beard adaptogen everyday carry. Dreamcatcher pitchfork yuccie,
+                    banh mi salvia venmo photo booth quinoa chicharrones.
+                  </p>
+                </div>
+                <!-- end of single item -->
+              </div>
+            </article>
+          </div>
+  
+</section>
+
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.tab-btn'); // Use querySelectorAll to select multiple elements
+    const content = document.querySelectorAll('.content'); // Select all elements with the class .content
+    
+    buttons.forEach((button, index) => { // Use forEach to loop through each button
+        button.addEventListener('click', function () {
+            // Hide all content elements
+            content.forEach(item => {
+                item.classList.remove('active');
+                
+            });
+            
+            // Show the content corresponding to the clicked button
+            content[index].classList.add('active');
+            buttons.forEach(item => {
+                item.classList.remove('active');
+                
+            });
+            
+            // Show the content corresponding to the clicked button
+            buttons[index].classList.add('active');
+          
+        });
+    });
+});
+  </script>
+    </body>
+</html>
