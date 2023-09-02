@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0%;
+            font-family: 'Poppins',sans-serif;
+            background-color: black;
+        }
+        
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: #49a6e9;
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+        .container{
+            width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: block;
+  flex-direction: column; /* Add this to make children stack vertically */
+  justify-content: center;
+  align-items: center; /* Center horizontally */
+  padding: 0;
+            
+        }
+        header{
+            text-align: center;
+            
+  color: var(--clr-grey-1);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-top: 5%; /* Add padding to move the header down */
+        }
+        h1{
+            text-align: center;
+            color: var(--clr-primary-10);
+            font-size:3rem;
+            font-weight: bold;
+            
+            letter-spacing: 2px;
+        }
+        .line{
+           margin: 0 auto;
+           
+            width: 10%;
+            height: 4px;
+            background-color: var(--clr-primary-5);
+        }
+
+        .main-body {
+            width: 90%; /* Add padding to the left and right */
+            max-width: 1200px; /* Set a max-width for the grid container */
+            margin: 0 auto; /* Center the grid horizontally */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            padding-top: 5%;
+        margin-bottom: 2rem;
+        }
+
+
+        .article {
+            background-color: var(--clr-white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--light-shadow);
+            text-align: center;
+            display: none;
+            flex-direction: column;
+            
+            
+            align-items: center;
+        }
+        .article:hover{
+            box-shadow: 1px 1px 20px #fff;
+            border:1px solid #49a6e9;
+            transition: all 0.3s linear;
+        }
+        .img{
+            background-color: transparent;
+        }
+        img{
+         width: 125px;
+         height: 125px;
+         border-radius: 50%; 
+         margin-bottom: 1rem; 
+         
+        }
+        h2{
+            color: var(--clr-grey-5);
+            font-size: 1rem;
+            margin-bottom: 1rem; 
+            background-color: transparent;
+        }
+        .js-button,a{
+            cursor: pointer;
+            text-emphasis: none;
+            color: white;
+            background-color: #49a6e9;
+            padding: 7px 10px;
+            border-radius: 31px;
+            border: none;
+            font-size: 15px;
+            text-transform: capitalize;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+        .but-container{
+            margin-bottom: 2rem;
+
+            margin: 0 auto;
+            text-align: center;
+        }
+        .btn{
+          
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .btn2{
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            background-color: var(--clr-primary-7);
+            color: #fff;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .btn2:hover{
+           transition: all 0.3s linear;
+            background-color: var(--clr-primary-1);
+        }
+        .block{
+            display: flex;
+        }
+        .none{
+            display: none;
+        }
+        .a1,.a3,.a5{
+            display: flex;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pagination</h1>
+            <div class="line"></div>
+        </header>
+        <div class="main-body">
+            <article id="1" class="article a1">
+                <div class="img"><img src="../img/110484391.jfif" alt=""></div>
+                <h2>Syed Daniyal Hashmi</h2>
+                <button class="js-button"><a href="https://github.com/Daniyalhash?tab=followers">View Profile</a></button>
+            </article>
+            <article id="2" class="article a2" >
+                <div class="img"><img src="../img/79059375.jfif" alt=""></div>
+                <h2>Saad Ali</h2>
+                <button class="js-button"><a href="https://github.com/saadali05">View Profile</a></button>
+            </article>
+            <article id="3" class="article a3">
+                <div class="img"><img src="../img/115348379.jfif" alt=""></div>
+                <h2>Shaheer Khan</h2>
+                <button class="js-button"><a href="https://github.com/Muhammad-Shaheer-khan">View Profile</a></button>
+            </article>
+            <article id="4" class="article a4" >
+                <div class="img"><img src="../img/96665688.jfif" alt=""></div>
+                <h2>Anas Masood</h2>
+                <button class="js-button"><a href="https://github.com/proanus">View Profile</a></button>
+            </article>
+            <article id="5" class="article a5">
+                <div class="img"><img src="../img/113125582.jfif" alt=""></div>
+                <h2>Owais Ali shah</h2>
+                <button class="js-button"><a href="https://github.com/syedowaisalishah">View Profile</a></button>
+            </article>
+        </div>
+        <div class="but-container">
+            <button class="btn prev-js">Prev</button>
+            <button class="btn2 nextpage" data-page="1">1</button>
+            <button class="btn2 nextpage" data-page="2">2</button>
+            <button class="btn Next-js">Next</button>
+        </div>
+    </div>
+    <script>
+       const articles = document.querySelectorAll('.article');
+        const nextJs = document.querySelector('.Next-js');
+        const prevJs = document.querySelector('.prev-js');
+        const nextpageButtons = document.querySelectorAll('.nextpage');
+
+        let currentPage = 1;
+        const articlesPerPage = 3; // Number of articles per page
+
+        // Function to show/hide articles based on the current page
+        function updatePage() {
+            articles.forEach((article, index) => {
+                const shouldDisplay = (index >= (currentPage - 1) * articlesPerPage) && (index < currentPage * articlesPerPage);
+                article.style.display = shouldDisplay ? 'flex' : 'none';
+            });
+        }
+
+        // Next page button click event
+        nextJs.addEventListener('click', function () {
+            currentPage++;
+            updatePage();
+        });
+
+        // Previous page button click event
+        prevJs.addEventListener('click', function () {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePage();
+            }
+        });
+
+        // Page buttons click event
+        nextpageButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                currentPage = parseInt(button.dataset.page);
+                updatePage();
+            });
+        });
+
+        // Initial page load
+        updatePage();
+        </script>
+
+
+// //     const butcontainer = document.querySelector('.btn-container')
+// //     const nextJs = document.querySelector('.Next-js')
+// //     const prevJs = document.querySelector('.prev-js')
+// //     const page1 = document.querySelector('.nextpage')
+// //     const page2 = document.querySelector('.nextpage2')
+// //     const article1 = document.querySelector('.a1')
+// //     const article2 = document.querySelector('.a2')
+// //     const article3 = document.querySelector('.a3')
+// //     const article4 = document.querySelector('.a4')
+
+// //     const article5 = document.querySelector('.a5')
+
+// //     let button1Clicked = false;
+// //     let button2Clicked = false;
+// //     let button1Clicked2 = false;
+// //     let button2Clicked2 = false;
+
+
+// //     nextJs.addEventListener('click', function () {
+//   button1Clicked = true;
+//   checkBothButtonsClicked();
+// });
+
+// page2.addEventListener('click', function () {
+//   button2Clicked = true;
+//   checkBothButtonsClicked();
+// });
+
+// function checkBothButtonsClicked() {
+//   if (button1Clicked && button2Clicked) {
+//     // Both buttons have been clicked, perform your action here
+//     article2.classList.add('block')
+//     article4.classList.add('block')
+//     article1.style.display = 'none';
+//     article3.style.display = 'none';
+//     article5.style.display = 'none';
+
+//   }
+// }
+
+// prevJs.addEventListener('click', function () {
+//   button1Clicked2 = true;
+//   checkBothButtonsClicked2();
+// });
+
+// page1.addEventListener('click', function () {
+//   button2Clicked2 = true;
+//   checkBothButtonsClicked2();
+// });
+
+// function checkBothButtonsClicked2() {
+//   if (button1Clicked2 && button2Clicked2) {
+//     // Both buttons have been clicked, perform your action here
+//     article2.classList.remove('block')
+//     article4.classList.remove('block')
+//     article1.style.display = 'flex';
+//     article3.style.display = 'flex';
+//     article5.style.display = 'flex';
+//     console.log(article2)
+//   }
+// }
+
+
+</body>
+</html>
